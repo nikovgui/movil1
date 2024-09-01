@@ -1,0 +1,46 @@
+<ion-content [scrollY]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+      <img src="https://cdn.discordapp.com/attachments/822105535809191938/1279520288131780768/DALLE_2024-08-31_15.16.32_-_Design_a_minimalist_logo_for_an_app_named_Artify_which_focuses_on_images._The_logo_should_be_simple_using_a_sleek_abstract_camera_icon_or_a_paint.webp?ex=66d60f21&is=66d4bda1&hm=b7f556c389ef457970cad219b4dfff8127d38c931110b59b47942fb7c7b62596&" alt="App Icon" class="centered-icon" />
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <div class="masonry-grid">
+      <div class="masonry-item" *ngFor="let image of images" (click)="showButton($event)">
+        <img [src]="image.src" alt="Image">
+        <div class="overlay">
+          <div class="icons">
+            <ion-icon name="download-outline" (click)="descargarImagen()"></ion-icon>
+            <ion-icon name="ellipsis-vertical-outline" (click)="masOpciones()"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom" class="fixed-tab-bar">
+    <ion-tab-button [routerLink]="['/upload-photo']">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>Upload</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/search']">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/profile']">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+
+
+
+

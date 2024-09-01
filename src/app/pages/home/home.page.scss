@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  flex-wrap: wrap;
+
+}
+
+.masonry-grid {
+  column-count: 2;
+  column-gap: 16px;
+}
+
+.masonry-item {
+  position: relative;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.masonry-item:hover .overlay {
+  opacity: 1;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+  
+
+
+ion-content {
+  --padding-bottom: 56px;
+}
+
+.fixed-tab-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+}
+
+.centered-icon {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

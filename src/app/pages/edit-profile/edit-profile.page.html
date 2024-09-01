@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding custom-background">
+  <div class="profile-pic-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWs0LhskvcZ7D9rmQMyu43syvJlKZUR5ucmQ&s" alt="Foto de perfil" class="profile-pic">
+    <ion-button class="change-photo-btn">Cambiar</ion-button>
+  </div>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Nombre(s)</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Apellidos</ion-label>
+    <ion-input [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Nombre de usuario</ion-label>
+    <ion-input [(ngModel)]="nombreUsuario"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="stacked">Información</ion-label>
+    <ion-textarea [(ngModel)]="informacion" placeholder="Cuenta tu historia"></ion-textarea>
+  </ion-item>
+
+  <div class="button-group">
+    <ion-button expand="full" color="primary" (click)="resetProfile()">Restablecer</ion-button>
+    <ion-button expand="full" color="primary" (click)="saveProfile()">Guardar</ion-button>
+  </div>
+</ion-content>
+

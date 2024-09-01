@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="upload-container">
+    <div class="upload-area">
+      <p>Elige un archivo o arrastralo y colocalo aqui</p>
+      <p>Recomendamos usar archivos .jpg de alta calidad con un tamaño inferior a 20MB o archivos .mp4 con un tamaño inferior a 200MB.</p>
+    </div>
+    <ion-button (click)="selectPhoto()">Seleccionar Foto</ion-button>
+    <ion-button (click)="savePhoto()">Guardar</ion-button>
+  </div>
+</ion-content>
+
+

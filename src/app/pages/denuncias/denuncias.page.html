@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Centro de Denuncias</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="denuncias.length > 0; else noDenuncias">
+    <ion-list>
+      <ion-item *ngFor="let denuncia of denuncias">
+        <ion-label>{{ denuncia.titulo }}</ion-label>
+        <p>{{ denuncia.descripcion }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ng-template #noDenuncias>
+    <div class="no-denuncias-container">
+      <p>No tienes denuncias.</p>
+    </div>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,43 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.ion-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+
+
+.dark-mode {
+    background-color: black;
+    color: white; 
+  }
+  
+  .light-mode {
+    background-color: white;
+    color: black; 
+  }
+  
+  .dark-mode {
+    ion-item {
+      ion-label {
+        color: white; 
+      }
+      ion-input {
+        color: white; 
+        caret-color: white;  
+  
+        
+        --placeholder-color: white;
+  
+       
+        --background: #333;  
+      }
+    }
+  }
+  

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Escribe tu historia</ion-label>
+    <ion-textarea [(ngModel)]="story"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="full" color="success" (click)="saveStory()">Listo</ion-button>
+</ion-content>
