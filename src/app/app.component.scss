@@ -7,7 +7,8 @@ ion-menu {
     background: var(--background);
     color: var(--color);
   }
-  
+ 
+
   ion-item {
     background: var(--background);
     color: var(--color);
@@ -44,4 +45,22 @@ ion-menu {
 }
 ion-menu {
   --background: transparent;
+}
+ion-tab-button ion-label {
+  font-size: xx-large; /* Ajusta a la medida que prefieras */
+  font-weight: bold; /* Puedes usar esto para hacer el texto más grueso */
+}
+
+/* Si los botones tienen clases personalizadas, puedes usarlas */
+.upload-tab-label ion-label,
+.search-tab-label ion-label,
+.profile-tab-label ion-label {
+  font-size: 50px; /* Ejemplo de tamaño grande */
+  font-weight: bold;
+}
+
+/* Si son parte de un ion-tab-bar */
+ion-tab-bar ion-label {
+  font-size: 80px; /* Cambia el valor según el tamaño deseado */
+  font-weight: bold; /* Omitir si no deseas el texto en negrita */
 }

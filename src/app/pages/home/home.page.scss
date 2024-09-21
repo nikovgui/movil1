@@ -3,12 +3,12 @@
   justify-content: center;
   padding: 16px;
   flex-wrap: wrap;
-
 }
 
 .masonry-grid {
   column-count: 2;
-  column-gap: 16px;
+  column-gap: 5px;
+  padding: 0 5px;
 }
 
 .masonry-item {
@@ -17,12 +17,20 @@
   position: relative;
 }
 
-.masonry-item img {
+.masonry-item img, 
+.masonry-item video {
   width: 100%;
   display: block;
   border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
 }
-img {
+
+.masonry-item:hover img, 
+.masonry-item:hover video {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.8);
+}
+
+img, video {
   width: 100%;
   height: auto;
   display: block;
@@ -37,10 +45,14 @@ img {
   color: white;
   display: flex;
   justify-content: flex-end;
+  padding: 5px;
+  border-radius: 8px; /* Bordes redondeados */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .masonry-item:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* Mostrar la superposición al hacer hover */
 }
 
 .icons {
@@ -48,10 +60,8 @@ img {
   gap: 10px;
 }
 
-  
-
-
 ion-content {
+  --background: linear-gradient(to right, #6a11cb, #2575fc); /* Fondo degradado */
   --padding-bottom: 56px;
 }
 
@@ -67,7 +77,7 @@ ion-content {
   flex-wrap: wrap;
   justify-content: center;
   overflow-y: auto;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 40px);
 }
 
 .centered-icon {
@@ -81,4 +91,16 @@ ion-content {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.icons ion-icon {
+  font-size: 25px;
+}
+
+.overlay {
+  border-radius: 8px;
+}
+.media-item.video {
+  width: 100%;
+  max-height: 400px; /* Ajusta el tamaño según tu diseño */
 }

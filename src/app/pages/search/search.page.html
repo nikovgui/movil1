@@ -2,19 +2,20 @@
   <ion-toolbar>
     <ion-title>Buscar</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button>***</ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-  <ion-content>
-    <ion-searchbar placeholder="Buscar..."></ion-searchbar>
-    <ion-list>
-      <!-- Aquí puedes agregar elementos de la lista que se mostrarán como resultados de búsqueda -->
-      <ion-item>
-        <ion-label>BMW</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Audi A3</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+
+<ion-content class="custom-background">
+  <ion-searchbar placeholder="Buscar..." class="custom-searchbar"></ion-searchbar>
+  <ion-list class="custom-list">
+    <!-- Aquí puedes agregar elementos de la lista que se mostrarán como resultados de búsqueda -->
+    <ion-item>
+      <ion-label>BMW</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Audi A3</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

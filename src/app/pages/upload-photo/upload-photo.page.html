@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Subir </ion-title>
+    <ion-title>Upload photo</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -10,12 +10,12 @@
 <ion-content [fullscreen]="true">
   <div class="upload-container">
     <div class="upload-area">
-      <p>Elige un archivo o arrastralo y colocalo aqui</p>
-      <p>Recomendamos usar archivos .jpg de alta calidad con un tamaño inferior a 20MB o archivos .mp4 con un tamaño inferior a 200MB.</p>
+      <p>Choose a file or drag and drop it here.</p>
+      <p>We recommend using high-quality .jpg files less than 20MB in size or .mp4 files less than 200MB in size.</p>
     </div>
-    <ion-button (click)="selectPhoto()">Seleccionar Foto</ion-button>
-    <ion-button (click)="savePhoto()">Guardar</ion-button>
+    <!-- Input file hidden -->
+    <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+    
+    <ion-button (click)="selectPhoto()">Select Photo</ion-button>
   </div>
 </ion-content>
-
-

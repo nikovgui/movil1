@@ -5,20 +5,26 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title></ion-title>
-      <img src="https://cdn.discordapp.com/attachments/822105535809191938/1279520288131780768/DALLE_2024-08-31_15.16.32_-_Design_a_minimalist_logo_for_an_app_named_Artify_which_focuses_on_images._The_logo_should_be_simple_using_a_sleek_abstract_camera_icon_or_a_paint.webp?ex=66d60f21&is=66d4bda1&hm=b7f556c389ef457970cad219b4dfff8127d38c931110b59b47942fb7c7b62596&" alt="App Icon" class="centered-icon" />
+      <img src="/assets/icon/icon.png" alt="App Icon" class="centered-icon" />
     </ion-toolbar>
   </ion-header>
 
   <div class="container">
     <div class="masonry-grid">
-      <div class="masonry-item" *ngFor="let image of images" (click)="showButton($event)">
-        <img [src]="image.src" alt="Image">
-        <div class="overlay">
-          <div class="icons">
-            <ion-icon name="download-outline" (click)="descargarImagen()"></ion-icon>
-            <ion-icon name="ellipsis-vertical-outline" (click)="masOpciones()"></ion-icon>
+      <div class="masonry-item" *ngFor="let media of mediaItems">
+        <ng-container *ngIf="media.type === 'image'; else videoTemplate">
+          <!-- Mostrar imagen -->
+          <img [src]="media.src" alt="Image" class="media-item image" (click)="openImageModal(media.src)" />
+          <div class="overlay">
+            <div class="icons">
+              <ion-icon name="download-outline" (click)="descargarMedia(media)"></ion-icon>
+            </div>
           </div>
-        </div>
+        </ng-container>
+        <!-- Template para video -->
+        <ng-template #videoTemplate>
+          <video [src]="media.src" controls class="media-item video"></video>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -40,7 +46,3 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
-
-
-
-

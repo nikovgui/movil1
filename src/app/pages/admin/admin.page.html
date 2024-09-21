@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin Dashboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <ion-list>
+      <!-- Listar los medios subidos -->
+      <ion-item *ngFor="let media of mediaItems">
+        <div class="media-preview">
+          <!-- Mostrar imagen o video según el tipo -->
+          <ng-container *ngIf="media.type === 'image'; else videoTemplate">
+            <img [src]="media.src" alt="Image" class="admin-media-item" />
+          </ng-container>
+          <ng-template #videoTemplate>
+            <video [src]="media.src" controls class="admin-media-item"></video>
+          </ng-template>
+        </div>
+        <!-- Botón de eliminar -->
+        <ion-button color="danger" (click)="deleteMedia(media)">
+          <ion-icon name="trash-outline"></ion-icon> Delete
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

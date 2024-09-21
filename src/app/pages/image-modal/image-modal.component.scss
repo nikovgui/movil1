@@ -1,0 +1,71 @@
+.transparent-background {
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Fondo degradado */
+}
+
+.modal-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+}
+
+.centered-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px; /* Bordes suaves */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra elegante alrededor de la imagen */
+  transition: transform 0.3s ease-in-out; /* Transición suave al hacer hover */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.centered-image:hover {
+  transform: scale(1.05); /* Efecto de zoom suave cuando pasas el mouse */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Botón translúcido */
+  border-radius: 50%; /* Botón circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor del botón */
+}
+
+.close-button ion-icon {
+  color: #333; /* Color del icono de cierre */
+  font-size: 20px;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 1); /* Más claro al hacer hover */
+}
+
+.download-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Botón translúcido */
+  border-radius: 50%; /* Botón circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor del botón */
+}
+
+.download-button ion-icon {
+  color: #333; /* Color del icono de descarga */
+  font-size: 20px;
+}
+
+.transparent-background {
+  background-color: black; /* Fondo negro */
+}

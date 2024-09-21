@@ -1,0 +1,11 @@
+<ion-content class="ion-padding">
+  <div class="modal-video-container" *ngIf="videoSrc">
+    <video [src]="videoSrc" controls></video>
+    <ion-button expand="full" (click)="closeModal()">Close</ion-button>
+  </div>
+
+  <div *ngIf="!videoSrc">
+    <p>No video available</p>
+    <ion-button expand="full" (click)="closeModal()">Close</ion-button>
+  </div>
+</ion-content>

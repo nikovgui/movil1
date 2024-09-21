@@ -1,22 +1,55 @@
+<ion-content [fullscreen]="true">
+  <video autoplay muted loop id="background-video">
+    <source src="assets/icon/videoevo.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
 
+  <div class="app-icon-container">
+    <img src="/assets/icon/icon.png" alt="App Icon" class="app-icon" />
+  </div>
 
-<ion-content class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Crear Cuenta</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-      <ion-button expand="full" (click)="register()">Registrar</ion-button>
-    </ion-card-content>
-  </ion-card>
-  <ion-button expand="full" [routerLink]="['/login']">Ya tienes cuenta? Inicia sesion</ion-button> 
+  <ion-grid class="grid-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Create account</ion-card-title>
+      </ion-card-header>
 
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input type="text" [(ngModel)]="fullName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Address</ion-label>
+          <ion-input type="text" [(ngModel)]="address"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Date of Birth</ion-label>
+          <ion-datetime display-format="MMMM DD, YYYY" [(ngModel)]="birthDate"></ion-datetime>
+        </ion-item>
+
+        <!-- Botón "Registrar" para guardar la información -->
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="full" color="primary" (click)="register()">Registrar</ion-button>
+
+    <ion-button expand="full" [routerLink]="['/login']">Already have an account? Sign in</ion-button>
+  </ion-grid>
 </ion-content>

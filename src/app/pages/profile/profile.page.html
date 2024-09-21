@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+    <ion-title>Profile</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -12,49 +12,27 @@
     <ion-card>
       <ion-card-header>
         <div class="profile-header">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWs0LhskvcZ7D9rmQMyu43syvJlKZUR5ucmQ&s" alt="" class="profile-avatar">
-          <h2>Sebastian Balboa</h2>
-          <p><ion-icon name="map-outline"></ion-icon> Peru, Lima</p>
+          <img [src]="profilePic" alt="Profile Picture" class="profile-avatar">
+          <h2>{{ fullName }}</h2>
+          <p><ion-icon name="map-outline"></ion-icon> {{ location }}</p> 
         </div>
       </ion-card-header>
 
       <ion-card-content>
         <div class="profile-stats">
           <div>
-            <h3>Seguidores</h3>
-            <p>513</p>
+            <h3>Followers</h3>
+            <p>{{ followers }}</p>
           </div>
           <div>
             <h3>Likes</h3>
-            <p>6533</p>
+            <p>{{ likes }}</p>
           </div>
         </div>
-        <ion-button expand="full" color="primary" [routerLink]="['/edit-profile']">Editar perfil</ion-button>
+        <ion-button expand="full" color="primary" [routerLink]="['/edit-profile']">Edit profile</ion-button>
+        <ion-button expand="full" color="primary" [routerLink]="['/login']">Logout</ion-button>
 
-        
         <div class="profile-photos">
-          <ion-row>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5WIlPGjzcBkDxV-3LOds3AqAbuetJK0FYQ&s" alt="Photo 1" class="photo-card">
-            </ion-col>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ54905h5cm8AQQY-WcmKnFh30QR_ughuS5Q&s" alt="Photo 2" class="photo-card">
-            </ion-col>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXJARXBpAdqYpVKfaR457JJA5FaFV3bH91Hw&s" alt="Photo 3" class="photo-card">
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1BbOXDO39TWms-oVlr2EMPAApPDQF7TUGQw&s" alt="Photo 4" class="photo-card">
-            </ion-col>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe6KseSXTmQX2ihqXxxqeHVEbCwUSMzgU7Tg&s" alt="Photo 5" class="photo-card">
-            </ion-col>
-            <ion-col size="4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2-uojqayjLTtu8LXQthBIPw-NqfQvVrbHIg&s" alt="Photo 6" class="photo-card">
-            </ion-col>
-          </ion-row>
         </div>
       </ion-card-content>
     </ion-card>

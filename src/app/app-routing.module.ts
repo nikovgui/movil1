@@ -118,13 +118,21 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   },
-  
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'forgotaccount',
+    loadChildren: () => import('./pages/forgotaccount/forgotaccount.module').then( m => m.ForgotaccountPageModule)
+  },
   
   
   {
     path: '**',//se le colocar los por para que sala por defecto salga una pagina no found y se debe de aagregar de los ultimos
     loadChildren: () => import('./pages/notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
+  
   
 
    

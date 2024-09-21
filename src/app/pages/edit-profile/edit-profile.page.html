@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Editar perfil</ion-title>
+    <ion-title>Edit profile</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -9,33 +9,56 @@
 
 <ion-content class="ion-padding custom-background">
   <div class="profile-pic-container">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWs0LhskvcZ7D9rmQMyu43syvJlKZUR5ucmQ&s" alt="Foto de perfil" class="profile-pic">
-    <ion-button class="change-photo-btn">Cambiar</ion-button>
+    <img [src]="profilePic ? profilePic : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWs0LhskvcZ7D9rmQMyu43syvJlKZUR5ucmQ&s'" alt="Foto de perfil" class="profile-pic">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden id="fileInput">
+    <ion-button class="change-photo-btn" (click)="triggerFileInput()">Cambiar</ion-button>
   </div>
 
   <ion-item lines="none" class="custom-item">
-    <ion-label position="floating">Nombre(s)</ion-label>
+    <ion-label position="floating">Nickname</ion-label>
     <ion-input [(ngModel)]="nombre"></ion-input>
   </ion-item>
 
   <ion-item lines="none" class="custom-item">
-    <ion-label position="floating">Apellidos</ion-label>
-    <ion-input [(ngModel)]="apellido"></ion-input>
-  </ion-item>
-
-  <ion-item lines="none" class="custom-item">
-    <ion-label position="floating">Nombre de usuario</ion-label>
+    <ion-label position="floating">Email</ion-label>
     <ion-input [(ngModel)]="nombreUsuario"></ion-input>
   </ion-item>
 
   <ion-item lines="none" class="custom-item">
-    <ion-label position="stacked">Información</ion-label>
-    <ion-textarea [(ngModel)]="informacion" placeholder="Cuenta tu historia"></ion-textarea>
+    <ion-label position="floating">Address</ion-label>
+    <ion-input [(ngModel)]="address"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Date of Birth</ion-label>
+    <ion-datetime display-format="MMMM DD, YYYY" [(ngModel)]="birthDate" [value]="birthDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="stacked">About you</ion-label>
+    <ion-textarea [(ngModel)]="informacion" placeholder="Tell your story"></ion-textarea>
+  </ion-item>
+
+  <!-- Campo para contraseña actual con opción de mostrar/ocultar -->
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Current password</ion-label>
+    <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"></ion-input>
+    <ion-icon slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="togglePasswordVisibility()"></ion-icon>
+  </ion-item>
+
+  <!-- Campos para nueva contraseña y confirmación -->
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">New password</ion-label>
+    <ion-input type="password" [(ngModel)]="newPassword"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label position="floating">Confirm new password</ion-label>
+    <ion-input type="password" [(ngModel)]="confirmNewPassword"></ion-input>
   </ion-item>
 
   <div class="button-group">
-    <ion-button expand="full" color="primary" (click)="resetProfile()">Restablecer</ion-button>
-    <ion-button expand="full" color="primary" (click)="saveProfile()">Guardar</ion-button>
+    <ion-button expand="full" color="primary" (click)="resetProfile()">Restore</ion-button>
+    <ion-button expand="full" color="primary" (click)="saveProfile()">Save</ion-button>
   </div>
 </ion-content>
-
